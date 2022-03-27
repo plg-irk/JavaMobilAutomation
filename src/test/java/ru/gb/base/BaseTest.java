@@ -36,11 +36,12 @@ public class BaseTest {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("deviceName", "Pixel");
+        capabilities.setCapability("deviceName", "Pixel_2_API_30");
         capabilities.setCapability("platformVersion", "11");
         capabilities.setCapability("udid", "emulator-5554");
         capabilities.setCapability("automationName", "UiAutomator2");
-        capabilities.setCapability("app", "/Users/v.shekhavtsov/Downloads/Android-NativeDemoApp-0.2.1.apk");
+        capabilities.setCapability("app",
+                "/Users/Leonid/Downloads/Android-NativeDemoApp-0.2.1.apk");
         // папка для сохранения скриншотов selenide
         Configuration.reportsFolder = "screenshots/actual";
         // устанавливаем и открываем приложение
