@@ -10,9 +10,9 @@ import ru.gb.listeners.AllureListener;
 public class CheckScreenshotTest extends BaseTest {
 
     @Test
-    @Description("Проверяем UI главной страницы с помощью скриншота.")
+    @Description("Проверяем UI главной страницы с помощью скриншота")
     public void CheckMainPageScreenshot() {
-        openApp()
+        openApp("Pixel2")
                 .checkScreenshot();
     }
 }

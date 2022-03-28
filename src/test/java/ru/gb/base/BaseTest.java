@@ -17,10 +17,10 @@ import static com.codeborne.selenide.Selenide.close;
 public class BaseTest {
 
     // метод, который будет открывать наше приложение на телефоне
-    public MainPage openApp() {
+    public MainPage openApp(String device) {
         WebDriver driver = null;
         try {
-            driver = getAndroidDriver();
+            driver = getAndroidDriver(device);
         } catch (MalformedURLException e) {
             e.printStackTrace();
             System.out.println("Opps, we have problems with URL for driver!");
@@ -31,21 +31,27 @@ public class BaseTest {
         return new MainPage();
     }
 
-    public static WebDriver getAndroidDriver() throws MalformedURLException {
+    public static WebDriver getAndroidDriver(String device) throws MalformedURLException {
         // устанавливаем capabilities
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("deviceName", "Pixel_2_API_30");
-        capabilities.setCapability("platformVersion", "11");
-        capabilities.setCapability("udid", "emulator-5554");
-        capabilities.setCapability("automationName", "UiAutomator2");
+
+        switch (device) {
+            case "Pixel2":
+                capabilities.setCapability("udid", "emulator-5554");
+            case "Pixel3":
+                capabilities.setCapability("udid", "emulator-5556");
+        }
+
         capabilities.setCapability("app",
                 "/Users/Leonid/Downloads/Android-NativeDemoApp-0.2.1.apk");
+
         // папка для сохранения скриншотов selenide
         Configuration.reportsFolder = "screenshots/actual";
+
         // устанавливаем и открываем приложение
-        return new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        return new AndroidDriver(new URL("http://127.0.0.1:4444/wd/hub"), capabilities);
     }
 
     @AfterClass
