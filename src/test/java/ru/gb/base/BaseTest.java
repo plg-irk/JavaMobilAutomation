@@ -31,7 +31,12 @@ public class BaseTest {
         return new MainPage();
     }
 
-    public static WebDriver getAndroidDriver(String device) throws MalformedURLException {
+    @AfterClass
+    public void setDown() {
+        close();
+    }
+
+    public AndroidDriver getAndroidDriver(String device) throws MalformedURLException {
         // устанавливаем capabilities
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -40,8 +45,10 @@ public class BaseTest {
         switch (device) {
             case "Pixel2":
                 capabilities.setCapability("udid", "emulator-5554");
+                break;
             case "Pixel3":
                 capabilities.setCapability("udid", "emulator-5556");
+                break;
         }
 
         capabilities.setCapability("app",
@@ -54,8 +61,5 @@ public class BaseTest {
         return new AndroidDriver(new URL("http://127.0.0.1:4444/wd/hub"), capabilities);
     }
 
-    @AfterClass
-    public void setDown() {
-        close();
-    }
+
 }

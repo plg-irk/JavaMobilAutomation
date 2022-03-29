@@ -21,13 +21,4 @@ public class CheckErrorEmptyPasswordTest extends BaseTest {
                 .checkPasswordErrorText(VALID_PASSWORD);
     }
 
-    @Test
-    @Description("Проверяем сообщение об ошибке при введении пустого пароля для Pixel3")
-    public void CheckEmptyPasswordPixel3() {
-        openApp("Pixel3")
-                .clickLoginMenuButton()
-                .sendInputEmail()
-                .clickLoginButton()
-                .checkPasswordErrorText(VALID_PASSWORD);
-    }
 }
