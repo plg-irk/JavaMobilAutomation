@@ -12,4 +12,9 @@
             <package name="ru.gb.tests.main"/>
         </packages>
     </test>
+    <test name="FormsPage">
+        <packages>
+            <package name="ru.gb.tests.forms"/>
+        </packages>
+    </test>
 </suite>

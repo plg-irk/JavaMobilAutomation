@@ -6,7 +6,6 @@ import com.github.romankh3.image.comparison.model.ImageComparisonResult;
 import com.github.romankh3.image.comparison.model.ImageComparisonState;
 import io.qameta.allure.Step;
 import ru.gb.locators.MainPageLocators;
-import ru.gb.pages.LoginPage;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -25,6 +24,12 @@ public class MainPage {
     public LoginPage clickLoginMenuButton() {
         $(locator().loginButton()).click();
         return new LoginPage();
+    }
+
+    @Step("Кликаем по кнопке формы в меню и переходим на новую страницу форм")
+    public FormsPage clickFormsMenuButton() {
+        $(locator().formsButton()).click();
+        return new FormsPage();
     }
 
     @Step("Делаем скриншот главной страницы и сравниваем с требованием.")

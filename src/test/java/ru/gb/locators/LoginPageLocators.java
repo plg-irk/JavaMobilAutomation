@@ -4,6 +4,7 @@ import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 
 public class LoginPageLocators {
+
     public By loginButton() {
         return MobileBy.AccessibilityId("button-LOGIN");
     }
