@@ -1,9 +1,10 @@
-package ru.gb.locators;
+package ru.gb.locators.Android;
 
 import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
+import ru.gb.interfaces.FormsPageLocators;
 
-public class FormsPageLocators {
+public class AndroidFormsPageLocators implements FormsPageLocators {
 
     public By formsButtonSwitch() {
         return MobileBy.AccessibilityId("switch");

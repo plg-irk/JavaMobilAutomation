@@ -1,9 +1,10 @@
-package ru.gb.locators;
+package ru.gb.locators.Android;
 
 import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
+import ru.gb.interfaces.MainPageLocators;
 
-public class MainPageLocators {
+public class AndroidMainPageLocators implements MainPageLocators {
 
     public By loginButton() {
         return By.xpath("//android.view.ViewGroup[@content-desc=\"Login\"]" +

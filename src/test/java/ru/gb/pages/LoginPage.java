@@ -6,7 +6,8 @@ import com.github.romankh3.image.comparison.ImageComparisonUtil;
 import com.github.romankh3.image.comparison.model.ImageComparisonResult;
 import com.github.romankh3.image.comparison.model.ImageComparisonState;
 import io.qameta.allure.Step;
-import ru.gb.locators.LoginPageLocators;
+import ru.gb.interfaces.LoginPageLocators;
+import ru.gb.locators.LocatorService;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -20,7 +21,7 @@ public class LoginPage {
 
     // Метод позволяет работать с локаторами для нужной нам страницы.
     private LoginPageLocators locator() {
-        return new LoginPageLocators();
+        return LocatorService.LOGIN_PAGE_LOCATORS;
     }
 
     @Step("Кликаем по кнопке 'логин' в форме")

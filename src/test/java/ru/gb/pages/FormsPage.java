@@ -5,12 +5,13 @@ import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Selenide.$;
 
-import ru.gb.locators.FormsPageLocators;
+import ru.gb.interfaces.FormsPageLocators;
+import ru.gb.locators.LocatorService;
 
 public class FormsPage {
 
     private FormsPageLocators locator() {
-        return new FormsPageLocators();
+        return LocatorService.FORMS_PAGE_LOCATORS;
     }
 
     @Step("Переключаем Switch")
@@ -24,6 +25,5 @@ public class FormsPage {
         $(locator().formsTextSwitchON()).shouldHave(Condition.text(text));
         return new FormsPage();
     }
-
 
 }
