@@ -24,7 +24,7 @@ public class LoginSteps extends BaseTest {
     @Then("^User should see error message \"([^\"]*)\"$")
     public void user_should_see_error_message(String errorText) {
 
-        loginPage.checkPasswordErrorText(errorText);
+        loginPage.checkLoginErrorText(errorText);
     }
 
     @When("^User get valid email$")
