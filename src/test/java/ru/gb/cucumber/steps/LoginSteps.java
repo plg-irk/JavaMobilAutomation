@@ -1,8 +1,9 @@
 package ru.gb.cucumber.steps;
 
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import ru.gb.base.BaseTest;
 import ru.gb.pages.LoginPage;
 
@@ -22,6 +23,18 @@ public class LoginSteps extends BaseTest {
 
     @Then("^User should see error message \"([^\"]*)\"$")
     public void user_should_see_error_message(String errorText) {
+
         loginPage.checkPasswordErrorText(errorText);
     }
+
+    @When("^User get valid email$")
+    public void user_get_valid_email() {
+        loginPage.sendInputEmail();
+    }
+
+    @Then("^User should see error message password \"([^\"]*)\"$")
+    public void user_should_see_error_message_password(String errorPassword) {
+        loginPage.checkPasswordErrorText(errorPassword);
+    }
+
 }
